@@ -4,3 +4,4 @@ services:
   app:
     build:
       context: .
+    command: tail -f /dev/null
