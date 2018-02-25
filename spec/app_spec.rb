@@ -10,6 +10,6 @@ RSpec.describe App do
     expect {
       get '/'
     }.to change(Request, :count).by(1)
-    # expect(Request.count).to eq(1)
+    expect(Request.count).to eq(1)
   end
 end
