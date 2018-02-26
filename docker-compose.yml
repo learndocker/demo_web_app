@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  app:
+    image: jfahrer/demo_web_app:latest
+    environment:
+      - POSTGRES_HOST=pg
+      - POSTGRES_USER=web_app
+      - POSTGRES_PASSWORD=secret
+
+  pg:
+    image: postgres:9.6.6-alpine
+    environment:
+      - POSTGRES_USER=web_app
+      - POSTGRES_PASSWORD=secret
