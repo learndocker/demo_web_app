@@ -15,7 +15,7 @@ jobs:
           command: |
             set -x
             apk add --no-cache --no-progress bash py-pip
-            pip install --quiet docker-compose
+            pip install --quiet docker-compose pyrsistent==0.16.0
       - run:
           name: Preparing the environment
           command: ./scripts/setup-env.sh
