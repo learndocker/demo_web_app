@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: docker:17.12.0-ce-git
     working_directory: /app
+
     environment:
       - COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
     steps:
@@ -14,7 +15,7 @@ jobs:
           command: |
             set -x
             apk add --no-cache --no-progress bash py-pip
-            pip install --quiet docker-compose
+            pip install --quiet docker-compose pyrsistent==0.16.0
       - run:
           name: Preparing the environment
           command: ./scripts/setup-env.sh
